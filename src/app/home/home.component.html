@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-sm-12 col-md-9 col-lg-9">
+		<div class="card-intro-img-adm">
+			<img class="card-img-top" src="assets/2.png" alt="Card image cap">
+		</div>	
+		<div class="card-body card-intro card-text-intro"> 
+			<p class="card-text cd-s">Faça Parte!!</p><p class="card-text cd-t">Você que é estudante do IFMS Campus Corumbá, entre e acesse a conteúdos exclusivos.<br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at varius neque. Phasellus condimentum nisi ipsum, vel porta eros venenatis in.</p>   
+		</div>
+	</div>
+
+	<div class="col-sm-12 col-md-3 col-lg-3">
+		<div class="card card-form col-sm-9">
+			<div class="card-body card-body-form">
+				<div class="form-group col-md-12 card-text cd-t">
+					<div class="alert alert-danger h6" role="alert" *ngIf="band">
+						Dados inválidos!
+					</div>
+					<form #formLogin="ngForm" (ngSubmit)="login(formLogin)">
+						<div class="form-group">
+							<div class="dropdown">
+								<div class="form-group col-md-12">
+									<label for="inputState">Acesso</label>
+									<select id="inputState" class="form-control" 
+									name="acesso" (change)="se($event.target.value)" >
+									<option selected value="Estudante">Estudante</option>
+									<option value="Professor">Professor</option>
+								</select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-md-12" *ngIf="flag">
+							<label for="exampleInputPassword1">RA</label>
+							<input type="number" class="form-control" id="ra" placeholder="RA" name="ra" ngModel #ra="ngModel">
+						</div>
+						<div class="form-group col-md-12" *ngIf="!flag">
+							<label for="exampleInputPassword1">Login</label>
+							<input type="text" class="form-control" id="login" placeholder="Login" name="login" ngModel #login="ngModel">
+							<label for="exampleInputPassword1">Senha</label>
+							<input type="password" class="form-control" id="senha" placeholder="Senha" name="senha" ngModel #senha="ngModel">
+						</div>
+						<button type="submit" class="btn btn-primary botao">Entrar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

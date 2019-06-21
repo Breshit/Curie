@@ -1,0 +1,34 @@
+<div class="pos-f-t">
+	<div class="collapse" id="navbarToggleExternalContent" [ngbCollapse]="isCollapsed">
+		<div class="bg-dark p-4">
+			<h5 class="text-white h4 cd-s">Menu</h5>
+			<span class="text-muted">
+			<a class="nav-link cd-t" [routerLink]="['/quest']">Adicionar Questões</a>
+			<a class="nav-link cd-t" [routerLink]="['/conts']">Visualizar Simulados</a>  		
+			<a class="nav-link cd-t" [routerLink]="['/res']">Resumos</a>
+			<a class="nav-link cd-t" href="#" disabled>Projetos</a>
+			<a class="nav-link cd-t" [routerLink]="['/admin']">Perfil</a>	
+			<a class="nav-link cd-t" href="" (click)="logout()">Sair</a></span>
+		</div>
+	</div>
+	<nav class="navbar navbar-dark bg-dark">
+		<button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarToggleExternalContent">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+</div>
+
+
+<div class="card-intro-img-adm"><img class="card-img-top" src="../assets/2.png" alt="Card image cap"></div>
+<!--Perfil do Professor-->			
+<div class="card-body card-body-adm-tt"><p class="card-text cd-s">Bem vindo {{admin.nome}}</p></div>
+<div class="card-body card-body-adm-lt"><p class="card-text cd-s">Lattes do Professor</p><p class="card-text cd-t">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at varius neque. Phasellus condimentum nisi ipsum, vel porta eros venenatis in. Donec in eros nec elit congue pellentesque sed ac lacus. Etiam id erat suscipit, viverra lectus quis, dignissim nisi. Vestibulum at metus in nisl cursus pulvinar eget et dui. Duis quis lacinia arcu, sit amet bibendum orci. Duis feugiat viverra pharetra. Fusce eu condimentum turpis. Suspendisse potenti. Nam blandit odio dapibus dui vestibulum sagittis.Ut gravida neque ac varius dictum. Nunc elementum egestas turpis et cursus. Vivamus hendrerit ante vel maximus pharetra. Mauris vitae pretium ipsum. Vivamus quis velit ultricies, semper risus in, porttitor velit.</p></div>
+<div class="card-body card-body-adm-img"><p class="card-text cd-s">Horário das Aulas <br/> Horário das PE's</p></div>
+<div class="card-body card-body-adm-lt">
+	<p class="card-text cd-s">Contatos</p>				
+	<div class="row">
+		<div class="col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"><a href="#"><i class="material-icons md-48 color">email</i></a><p class="card-text cd-l">E-mail</p></div>
+		<div class="col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"><a href="#"><i class="material-icons md-48 color">chat</i></a><p class="card-text cd-l">Chat</p></div>
+		<div class="col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"><a href="#"><i class="material-icons md-48 color">block</i></a><p class="card-text cd-l">Desabilitado</p></div>
+	</div>
+</div>

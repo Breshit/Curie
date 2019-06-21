@@ -1,0 +1,33 @@
+aluno - RA (ra vai ser o id), nome, turma
+Adm - id, nome, login, senha
+
+disciplina - id, nome
+conteudo - id, nome, disciplina_id
+
+simulado - id, conteudo_id, titulo, descricao
+(many_to_many) potuacao_aluno - id_aluno, id_simulado, pontuacao, tempo
+
+questao - id, enunciado, certa
+alternativas - id, questao_id, descricao
+
+(many_to_many) simulado_questao - simulado_id, questao_id
+
+resumo - id, conteudo_id, imagem_link (até onde eu sei, é o link da imagem no server que é guardado no banco, não a imagem)
+
+Lógica:
+-Uma disciplina pode ter varios conteudos, um conteudo é apenas de uma disciplina
+-Um conteudo só tem um simulado, um simulado é apenas de um conteúdo
+-Um conteúdo tem diversos resumos, um resumo é apenas de um conteúdo
+-Um aluno faz varios simulados, e pode fazer um simulado apenas uma vez
+-Um simulado tem diversas questões (as qeustões a serem respondidas pelo aluno serão sorteadas pelo front-end/eu)
+
+<div questoes 
+<card *ngFor="let c e">{{conteudo}}</card>
+
+
+{disciplica: "", conteudos: "", enunciado : "qsdasda", op1: "",  op:""}
+
+json.value.op1 = "a) " + json.value.op1 
+
+questao = "batatas sao azuis?"
+questao = "a)" + questao

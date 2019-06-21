@@ -1,0 +1,23 @@
+@charset utf-8;
+
+
+/* Login*/
+.row{width:100%;}.col-sm{width:100%;}.col-md-3{margin-top: 15%;}.col-lg-3{margin-top: 15%;}
+.card-form{float: right;}.card-body-form{margin-top: auto;text-align: justify; font-family: "Times New Roman", Times, serif;}.botao{margin-left: 174px;}
+	
+
+/*Intro*/.card-intro-img{width:100%;margin-top: -5% !important;}.card-text-intro{width:100%;text-align: justify;margin-top: -5%;!important}
+
+
+.card-intro-img-adm{width:100% !important;}
+.card-body-adm-tt{width:100% !important; background-color:#212529; color: #ffffff;}
+.card-body-adm-lt{width:100% !important; background-color:#ffffff; color: black; border-radius: 1%;}
+.card-body-adm-img{width:100% !important; background-color:#212529; color: #ffffff;}
+.cd-s{font-size: 3em; font-family: 'Euphoria Script', cursive !important; text-align: center;}
+.cd-s-sm{font-size: 2em; font-family: 'Euphoria Script', cursive !important; text-align: center;}
+.cd-t{font-size: 1.5em; font-family: 'Berkshire Swash', cursive; text-align: center !important;}
+.cd-t-sm{font-size: 1em; font-family: 'Berkshire Swash', cursive; text-align: center !important;}
+.cd-l{font-size: 1em; font-family: 'Berkshire Swash', cursive; text-align: left;}
+.ikon{float: center !important; text-align: center !important;}
+
+/*sim_edt*/.botao-sub{float: right; margin-top:2%;}.botao-add{float: center;margin-top:2%;}

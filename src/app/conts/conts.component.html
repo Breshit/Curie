@@ -1,0 +1,35 @@
+<div class="pos-f-t">
+	<div class="collapse" id="navbarToggleExternalContent" [ngbCollapse]="isCollapsed">
+		<div class="bg-dark p-4">
+			<h5 class="text-white h4 cd-s">Menu</h5>
+			<span class="text-muted">
+			<a class="nav-link cd-t" [routerLink]="['/quest']">Adicionar Questões</a>
+			<a class="nav-link cd-t" [routerLink]="['/conts']">Visualizar Simulados</a>  		
+			<a class="nav-link cd-t" [routerLink]="['/res']">Resumos</a>
+			<a class="nav-link cd-t" href="#">Projetos</a>
+			<a class="nav-link cd-t" [routerLink]="['/user']" *ngIf="flag">Perfil</a>	
+			<a class="nav-link cd-t" [routerLink]="['/admin']" *ngIf="!flag">Perfil</a>	
+			<a class="nav-link disabled cd-t" href="#">Planos Futuros</a></span>
+		</div>
+	</div>
+	<nav class="navbar navbar-dark bg-dark">
+		<button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarToggleExternalContent">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+</div>
+
+<div class="card-intro-img-adm"><img class="card-img-top" src="../assets/2.png" alt="Card image cap"></div>			
+<div class="card-body card-body-adm-tt"><p class="card-text cd-s">Disciplinas</p>
+	<div class="row"> 
+		<div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let t of teste">
+			<div class="card-body card-body-adm-lt">
+				<span class="oi oi-fire"></span>
+				<p class="card-text cd-s">{{t.disciplina.disc}}</p> 
+				<div class="row" *ngFor="let c of t.conteudos">
+					<a>{{c.cont}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

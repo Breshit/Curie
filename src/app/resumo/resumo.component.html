@@ -1,0 +1,72 @@
+<div class="pos-f-t">
+	<div class="collapse" id="navbarToggleExternalContent" [ngbCollapse]="isCollapsed">
+		<div class="bg-dark p-4">
+			<h5 class="text-white h4 cd-s">Menu</h5>
+			<span class="text-muted">
+			<a class="nav-link cd-t" [routerLink]="['/quest']">Adicionar Questões</a>
+			<a class="nav-link cd-t" [routerLink]="['/conts']">Visualizar Simulados</a>  		
+			<a class="nav-link cd-t" [routerLink]="['/res']">Resumos</a>
+			<a class="nav-link cd-t" disabled>Projetos</a>
+			<a class="nav-link cd-t" [routerLink]="['/user']" *ngIf="flag">Perfil</a>	
+			<a class="nav-link cd-t" [routerLink]="['/admin']" *ngIf="!flag">Perfil</a>	
+			<a class="nav-link disabled cd-t">Planos Futuros</a></span>
+		</div>
+	</div>
+	<nav class="navbar navbar-dark bg-dark">
+		<button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarToggleExternalContent">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+</div>
+
+<div class="card-intro-img-adm"><img class="card-img-top" src="../assets/2.png" alt="Card image cap"></div>
+
+<div class="card-body card-body-adm-tt">
+	<div class="card-body card-body-adm-lt">
+		<p class="card-text cd-s-sm">Olá Querido Aluno, aqui você poderá enviar os resumos dos conteúdos.</p>
+	</div>
+	<div class="row">
+		<div class="card-body card-body-adm-tt"></div>	
+	</div>			
+	<!-- <div class="row"> 
+		<div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let r of resumos">
+			<div class="card-body card-body-adm-lt">
+				<i class="material-icons md-48 color">photo</i>
+				<br>
+				<label class="cd-t">{{r.nome}}</label>
+			</div>
+		</div>
+	</div> -->
+	<div class="row">
+		<div class="card-body card-body-adm-tt"></div>
+	</div>
+	<div class="card-body card-body-adm-tt">
+		<button type="submit" class="btn btn-primary cd-t" (click)="open(content)">Enviar resumo</button>
+	</div>
+</div>
+
+<ng-template #content let-modal>
+	<div class="modal-header card-text">
+		<h4 class="modal-title cd-s" id="modal-basic-title">Adicionar resumo</h4>
+		<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<form #res="ngForm" enctype="multipart/form-data" (ngSubmit)="addResumo(res)">
+			<div class="form-group">
+				<label class="cd-t">Disciplina</label>
+				<select id="disc" class="form-control" name="disc" ngModel #disc="ngModel" required (change)="getCont($event.target.value)">
+					<option *ngFor="let d of disciplina$" [value]="d.id">{{d.disc}}</option>
+				</select>
+				<label class="cd-t">Conteúdo</label>
+				<select id="disc" class="form-control" name="cont" ngModel required #disc="ngModel">
+					<option *ngFor="let c of conteudo$" [value]="c.cont">{{c.cont}}</option>
+				</select>
+				<label class="cd-t">Imagem</label>
+				<input type="file" name="res" required (change)="createFormData($event)">
+			</div>
+			<button type="submit" class="btn btn-outline-dark cd-t">Enviar</button>
+		</form>
+	</div>
+</ng-template>
